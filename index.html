@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кирилл | Портфолио</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS для анимаций -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+</head>
+<body class="bg-white text-black font-sans">
+
+  <!-- Top Bar -->
+  <div class="flex justify-between items-center p-4 text-sm border-b">
+    <button class="transition duration-300 hover:text-blue-600" onclick="document.getElementById('menu').classList.remove('-translate-x-full')">Меню</button>
+    <span class="italic">Кирилл</span>
+    <a href="#contact" class="transition duration-300 hover:text-blue-600">Контакты</a>
+  </div>
+
+  <!-- Side Menu -->
+  <div id="menu" 
+       class="fixed top-0 left-0 w-64 h-screen bg-black text-white p-6 z-50 transform -translate-x-full transition-transform duration-500">
+    <button class="mb-6 transition duration-300 hover:text-red-400" onclick="document.getElementById('menu').classList.add('-translate-x-full')">Закрыть ✕</button>
+    <nav class="flex flex-col gap-4 text-lg">
+      <a href="#about" class="transition duration-300 hover:text-blue-400">О себе</a>
+      <a href="#experience" class="transition duration-300 hover:text-blue-400">Опыт</a>
+      <a href="#skills" class="transition duration-300 hover:text-blue-400">Навыки</a>
+      <a href="#qualities" class="transition duration-300 hover:text-blue-400">Качества</a>
+      <a href="#contact" class="transition duration-300 hover:text-blue-400">Контакты</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="px-6 md:px-12 py-12 grid gap-8 max-w-5xl mx-auto">
+    <h1 class="text-6xl md:text-8xl font-bold leading-tight" data-aos="fade-up">Бизнес-Ассистент</h1>
+    <h2 class="text-5xl md:text-7xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="200">Организация | Маркетинг | Дизайн</h2>
+
+    <p class="text-xl md:text-2xl max-w-2xl" data-aos="fade-up" data-aos-delay="400">
+      Привет! Я Кирилл, 18 лет, Тюмень. Разгружаю предпринимателей от рутины, 
+      организую проекты с нуля, создаю визуалы и автоматизирую процессы для 
+      быстрого роста бизнеса.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <img src="https://picsum.photos/400/250?grayscale" alt="about" class="rounded-2xl shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-right"/>
+      <img src="https://picsum.photos/400/300" alt="nature" class="rounded-2xl shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-left"/>
+    </div>
+
+    <h3 id="about" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">О себе</h3>
+    <p class="text-lg md:text-xl max-w-3xl" data-aos="fade-up" data-aos-delay="200">
+      Молодой специалист с опытом в бизнес-ассистировании, маркетинге и дизайне. 
+      Помогаю предпринимателям сосредоточиться на стратегии, беря на себя организацию задач, 
+      контроль сроков, визуализацию процессов и автоматизацию рутины. 
+      Свободно владею английским (B2), быстро осваиваю новые инструменты.
+    </p>
+
+    <h3 id="experience" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Опыт</h3>
+    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
+      <li>Ассистент предпринимателя: организация задач и проектов, контроль сроков, координация с исполнителями.</li>
+      <li>Стартап с командой: участие в запуске проектов с нуля, распределение задач, анализ рынка, координация.</li>
+    </ul>
+
+    <h3 id="skills" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Навыки</h3>
+    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
+      <li>Google Workspace (Docs, Sheets, Forms, Slides), Notion</li>
+      <li>Figma, Photoshop, After Effects (базовый)</li>
+      <li>Python, Excel/Google Sheets (формулы, сводные таблицы)</li>
+      <li>SMM и управление социальными сетями</li>
+      <li>Организация процессов и многозадачность</li>
+    </ul>
+
+    <h3 id="qualities" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Качества</h3>
+    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
+      <li>Организация процессов и автоматизация рутины</li>
+      <li>Многозадачность и приоритизация</li>
+      <li>Документация и коммуникация с командами</li>
+      <li>Инициативность и лидерство</li>
+      <li>Ответственность и внимание к деталям</li>
+      <li>Адаптивность и стрессоустойчивость</li>
+      <li>Английский язык — уровень B2</li>
+    </ul>
+
+    <h3 id="contact" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Контакты</h3>
+    <p class="text-lg" data-aos="fade-up" data-aos-delay="200">
+      Готов взять на себя вашу рутину и помочь бизнесу расти быстрее.<br /><br />
+      Email: <a href="mailto:your.email@example.com" class="underline transition duration-300 hover:text-blue-600">your.email@example.com</a><br />
+      Telegram: <span class="transition duration-300 hover:text-blue-600">@yourusername</span><br />
+      LinkedIn: <span class="transition duration-300 hover:text-blue-600">linkedin.com/in/yourprofile</span>
+    </p>
+  </div>
+</body>
+</html>
