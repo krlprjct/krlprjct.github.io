@@ -39,26 +39,18 @@
       font-weight: 600;
       background: none;
     }
-    /* Responsive styles for mobile (iPhone) devices */
+    /* Корректировки для мобильных устройств */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 4rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
       header {
         padding: 12px 8px;
+        z-index: 100;
       }
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      h1 {
+        font-size: 3rem; /* Подгонка размера текста под мобильные экраны */
+        margin-bottom: 0.5rem;
       }
-      nav a {
-        padding: 12px 20px;
-        font-size: 16px;
+      h2 {
+        font-size: 1.25rem;
       }
       .hero {
         flex-direction: column;
@@ -66,6 +58,25 @@
       }
       .hero img {
         max-width: 100%;
+        height: auto;
+      }
+      .hero div {
+        margin-top: 20px; /* Отступ между текстом и изображением */
+      }
+      nav a {
+        padding: 10px 18px;
+        font-size: 16px; /* Увеличены кнопки для удобства на мобильных */
+      }
+      nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      section {
+        padding: 10px; /* Уменьшены отступы для более компактного вида */
+      }
+      .main-content {
+        padding-top: 100px; /* Исправление наложения на контент */
       }
     }
   </style>
@@ -85,7 +96,7 @@
   </header>
 
   <!-- Main -->
-  <main class="px-6 md:px-12 py-12 grid gap-16 max-w-6xl mx-auto">
+  <main class="px-6 md:px-12 py-12 grid gap-16 max-w-6xl mx-auto main-content">
 
     <!-- Hero -->
     <section id="hero" class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
@@ -241,4 +252,3 @@
   </script>
 </body>
 </html>
-
