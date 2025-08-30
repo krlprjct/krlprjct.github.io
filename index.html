@@ -1,101 +1,215 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кирилл | Портфолио</title>
+  <title>Кирилл | Визитка</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS для анимаций -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      AOS.init({ duration: 1000, once: true });
-    });
-  </script>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- SEO -->
+  <meta name="description" content="Ассистент, дизайн и процессы. Помогаю предпринимателям расти быстрее — беру на себя рутину, навожу порядок и координирую исполнителей.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Кирилл | Визитка">
+  <meta property="og:description" content="Свобождаю время предпринимателя: беру рутину, выстраиваю процессы и координирую задачи.">
+  <meta property="og:image" content="og-image-updated.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Визитка Кирилла">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    nav a {
+      padding: 8px 16px;
+      color: #333;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    nav a.active {
+      color: #1d4ed8;
+      font-weight: 600;
+      transform: scale(1.05);
+    }
+    nav a:hover {
+      color: #1d4ed8;
+      transform: scale(1.05);
+      font-weight: 600;
+      background: none;  /* Remove the background highlight */
+    }
+  </style>
 </head>
 <body class="bg-white text-black font-sans">
 
-  <!-- Top Bar -->
-  <div class="flex justify-between items-center p-4 text-sm border-b">
-    <button class="transition duration-300 hover:text-blue-600" onclick="document.getElementById('menu').classList.remove('-translate-x-full')">Меню</button>
-    <span class="italic">Кирилл</span>
-    <a href="#contact" class="transition duration-300 hover:text-blue-600">Контакты</a>
-  </div>
-
-  <!-- Side Menu -->
-  <div id="menu" 
-       class="fixed top-0 left-0 w-64 h-screen bg-black text-white p-6 z-50 transform -translate-x-full transition-transform duration-500">
-    <button class="mb-6 transition duration-300 hover:text-red-400" onclick="document.getElementById('menu').classList.add('-translate-x-full')">Закрыть ✕</button>
-    <nav class="flex flex-col gap-4 text-lg">
-      <a href="#about" class="transition duration-300 hover:text-blue-400">О себе</a>
-      <a href="#experience" class="transition duration-300 hover:text-blue-400">Опыт</a>
-      <a href="#skills" class="transition duration-300 hover:text-blue-400">Навыки</a>
-      <a href="#qualities" class="transition duration-300 hover:text-blue-400">Качества</a>
-      <a href="#contact" class="transition duration-300 hover:text-blue-400">Контакты</a>
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 text-sm border-b sticky top-0 bg-white/90 backdrop-blur z-50">
+    <span class="font-bold text-xl">Кирилл</span>
+    <nav id="navbar" class="flex gap-6 text-lg">
+      <a href="#about" class="hover:text-blue-600 transition" id="nav-about">О себе</a>
+      <a href="#value" class="hover:text-blue-600 transition" id="nav-value">Что я даю бизнесу</a>
+      <a href="#experience" class="hover:text-blue-600 transition" id="nav-experience">Опыт</a>
+      <a href="#skills" class="hover:text-blue-600 transition" id="nav-skills">Навыки</a>
+      <a href="#contact" class="hover:text-blue-600 transition" id="nav-contact">Контакты</a>
     </nav>
-  </div>
+  </header>
 
-  <!-- Main Content -->
-  <div class="px-6 md:px-12 py-12 grid gap-8 max-w-5xl mx-auto">
-    <h1 class="text-6xl md:text-8xl font-bold leading-tight" data-aos="fade-up">Бизнес-Ассистент</h1>
-    <h2 class="text-5xl md:text-7xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="200">Организация | Маркетинг | Дизайн</h2>
+  <!-- Main -->
+  <main class="px-6 md:px-12 py-12 grid gap-16 max-w-6xl mx-auto">
 
-    <p class="text-xl md:text-2xl max-w-2xl" data-aos="fade-up" data-aos-delay="400">
-      Привет! Я Кирилл, 18 лет, Тюмень. Разгружаю предпринимателей от рутины, 
-      организую проекты с нуля, создаю визуалы и автоматизирую процессы для 
-      быстрого роста бизнеса.
-    </p>
+    <!-- Hero -->
+    <section id="hero" class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+      <div>
+        <h1 class="text-7xl md:text-8xl font-extrabold leading-tight">Быстро. Надёжно. Всегда на шаг впереди.</h1>
+        <h2 class="text-2xl md:text-3xl text-gray-600 max-w-2xl mt-6">Ваш бизнес растёт быстрее, когда рутина под контролем</h2>
+        <div class="mt-6 flex gap-4">
+          <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:scale-105 transition">Связаться</a>
+          <a href="resume.pdf" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition">Скачать резюме</a>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <img src="IMG_9576.png" alt="Кирилл" class="rounded-2xl shadow-lg hover:scale-105 transition"/>
+      </div>
+    </section>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <img src="https://picsum.photos/400/250?grayscale" alt="about" class="rounded-2xl shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-right"/>
-      <img src="https://picsum.photos/400/300" alt="nature" class="rounded-2xl shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-left"/>
-    </div>
+    <!-- About -->
+    <section id="about" data-aos="fade-up">
+      <h3 class="text-5xl md:text-6xl font-bold leading-tight mb-6">О себе</h3>
+      <div class="text-lg md:text-xl">
+        Молодой специалист с опытом в бизнес-ассистировании, маркетинге и дизайне. 
+        Помогаю предпринимателям сосредоточиться на стратегии, беря на себя организацию задач, 
+        контроль сроков, визуализацию процессов и автоматизацию рутины. 
+        Свободно владею английским (B2), быстро осваиваю новые инструменты.
+      </div>
+    </section>
 
-    <h3 id="about" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">О себе</h3>
-    <p class="text-lg md:text-xl max-w-3xl" data-aos="fade-up" data-aos-delay="200">
-      Молодой специалист с опытом в бизнес-ассистировании, маркетинге и дизайне. 
-      Помогаю предпринимателям сосредоточиться на стратегии, беря на себя организацию задач, 
-      контроль сроков, визуализацию процессов и автоматизацию рутины. 
-      Свободно владею английским (B2), быстро осваиваю новые инструменты.
-    </p>
+    <!-- Value -->
+    <section id="value" data-aos="zoom-in">
+      <h3 class="text-5xl md:text-6xl font-bold leading-tight mb-10">Что я даю бизнесу</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 border rounded-2xl shadow hover:scale-105 transition">
+          <h4 class="text-xl font-semibold mb-2">⏳ Освобождение времени</h4>
+          <p>Беру на себя рутину и операционные процессы</p>
+        </div>
+        <div class="p-6 border rounded-2xl shadow hover:scale-105 hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-2">📂 Упорядочивание процессов</h4>
+          <p>Структурирую задачи, внедряю порядок и автоматизацию</p>
+        </div>
+        <div class="p-6 border rounded-2xl shadow hover:scale-105 hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold mb-2">🤝 Координация команды</h4>
+          <p>Организую взаимодействие и контроль исполнения</p>
+        </div>
+      </div>
+    </section>
 
-    <h3 id="experience" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Опыт</h3>
-    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
-      <li>Ассистент предпринимателя: организация задач и проектов, контроль сроков, координация с исполнителями.</li>
-      <li>Стартап с командой: участие в запуске проектов с нуля, распределение задач, анализ рынка, координация.</li>
-    </ul>
+    <!-- Experience -->
+    <section id="experience" data-aos="fade-up">
+      <h3 class="text-5xl md:text-6xl font-bold leading-tight mb-10">Опыт</h3>
+      <div class="relative border-l-2 pl-6 space-y-8">
+        <div>
+          <span class="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full"></span>
+          <p class="font-semibold">2025 – наст. время</p>
+          <p>Ассистент предпринимателя: организация задач и проектов, контроль сроков, коммуникация с исполнителями.</p>
+        </div>
+        <div>
+          <span class="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full"></span>
+          <p class="font-semibold">2025</p>
+          <p>Стартап с командой: участие в запуске проектов с нуля, распределение задач, анализ рынка, координация.</p>
+        </div>
+        <div>
+          <span class="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full"></span>
+          <p class="font-semibold">2023</p>
+          <p>Веб-дизайн и графический дизайн: первые проекты, улучшение навыков работы с инструментами.</p>
+        </div>
+      </div>
+    </section>
 
-    <h3 id="skills" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Навыки</h3>
-    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
-      <li>Google Workspace (Docs, Sheets, Forms, Slides), Notion</li>
-      <li>Figma, Photoshop, After Effects (базовый)</li>
-      <li>Python, Excel/Google Sheets (формулы, сводные таблицы)</li>
-      <li>SMM и управление социальными сетями</li>
-      <li>Организация процессов и многозадачность</li>
-    </ul>
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up">
+      <h3 class="text-5xl md:text-6xl font-bold leading-tight mb-10">Навыки</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-semibold mb-2">Инструменты</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>Google Workspace</li>
+            <li>Notion</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Технические навыки</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>Python</li>
+            <li>Excel / Google Sheets</li>
+            <li>Figma, Photoshop, After Effects</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Soft skills</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>SMM и соцсети</li>
+            <li>Организация процессов</li>
+            <li>Маркетинг (в процессе изучения)</li>
+          </ul>
+        </div>
+      </div>
 
-    <h3 id="qualities" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Качества</h3>
-    <ul class="list-disc ml-6 text-lg space-y-2" data-aos="fade-up" data-aos-delay="200">
-      <li>Организация процессов и автоматизация рутины</li>
-      <li>Многозадачность и приоритизация</li>
-      <li>Документация и коммуникация с командами</li>
-      <li>Инициативность и лидерство</li>
-      <li>Ответственность и внимание к деталям</li>
-      <li>Адаптивность и стрессоустойчивость</li>
-      <li>Английский язык — уровень B2</li>
-    </ul>
+      <!-- Soft skills icons (smile style) -->
+      <div class="flex justify-center gap-8 mt-8 text-gray-700">
+        <div class="flex flex-col items-center hover:scale-110 transition">
+          <span class="text-2xl">⚡</span>
+          <span>Инициативность</span>
+        </div>
+        <div class="flex flex-col items-center hover:scale-110 transition">
+          <span class="text-2xl">🧠</span>
+          <span>Многозадачность</span>
+        </div>
+        <div class="flex flex-col items-center hover:scale-110 transition">
+          <span class="text-2xl">🤝</span>
+          <span>Ответственность</span>
+        </div>
+        <div class="flex flex-col items-center hover:scale-110 transition">
+          <span class="text-2xl">💪</span>
+          <span>Стрессоустойчивость</span>
+        </div>
+      </div>
+    </section>
 
-    <h3 id="contact" class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up">Контакты</h3>
-    <p class="text-lg" data-aos="fade-up" data-aos-delay="200">
-      Готов взять на себя вашу рутину и помочь бизнесу расти быстрее.<br /><br />
-      Telegram: <a href="https://t.me/twooneseveneight" 
-            target="_blank" 
-            class="transition duration-300 hover:text-blue-600">
-            @twooneseveneight
-          </a>
-    </p>
-  </div>
+    <!-- Contact / Telegram -->
+    <section id="contact" data-aos="fade-up">
+      <h3 class="text-5xl md:text-6xl font-bold leading-tight mb-6">Контакты</h3>
+      <div class="max-w-xl mx-auto p-6 border rounded-2xl shadow-lg text-center">
+        <p class="text-xl mb-4">Хотите обсудить проект или сотрудничество?</p>
+        <form action="https://t.me/twooneseveneight" method="get">
+          <input type="submit" value="✈️ Написать в Telegram" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 hover:scale-105 transition"/>
+        </form>
+        <p class="mt-4 text-gray-600">Или на почту: <a href="mailto:yourmail@example.com" class="underline">yourmail@example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 border-t mt-12 text-gray-600 text-sm">© 2025 Кирилл. Все права защищены.</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("#navbar a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
