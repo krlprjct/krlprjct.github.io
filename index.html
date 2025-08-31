@@ -9,10 +9,28 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    nav a {
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: block;
+      padding: 0.5rem 0;
+    }
+    nav a:hover {
+      color: #1d4ed8;
+    }
     nav a.active {
       color: #1d4ed8;
-      font-weight: 600;
-      transform: scale(1.05);
+    }
+    #menu {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: top;
+    }
+    #menu.open {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    #menu.closed {
+      transform: scaleY(0);
+      opacity: 0;
     }
   </style>
 </head>
@@ -20,18 +38,20 @@
 
   <!-- Header -->
   <header class="flex justify-between items-center p-4 border-b sticky top-0 bg-white/90 backdrop-blur z-50">
-    <span class="font-bold text-xl">Кирилл</span>
+    <div class="flex flex-col z-50">
+      <span class="font-bold text-xl">Кирилл</span>
+      <span class="text-sm text-gray-600">Бизнес-ассистент</span>
+    </div>
 
-    <!-- Гамбургер -->
-    <button id="menu-btn" class="block md:hidden">
+    <!-- Burger button only on mobile -->
+    <button id="menu-btn" class="block md:hidden z-50">
       <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
 
-    <!-- Навигация -->
-    <nav id="menu" class="hidden md:flex gap-6 text-lg flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 shadow md:shadow-none">
+    <!-- Menu -->
+    <nav id="menu" class="closed hidden md:flex md:flex-row md:gap-6 text-lg absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 shadow md:shadow-none z-40 flex-col md:flex-row">
       <a href="#about">О себе</a>
       <a href="#value">Что я даю бизнесу</a>
       <a href="#experience">Опыт</a>
@@ -40,36 +60,36 @@
     </nav>
   </header>
 
+  <!-- Hero -->
+  <section id="hero" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 md:px-12 py-16 max-w-6xl mx-auto" data-aos="fade-up">
+    <div>
+      <h1 class="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+        Быстро. Надёжно. Всегда на шаг впереди.
+      </h1>
+      <h2 class="text-base sm:text-lg md:text-2xl text-gray-600 mt-6">
+        Ваш бизнес растёт быстрее, когда рутина под контролем
+      </h2>
+      <div class="mt-6 flex gap-4 justify-center md:justify-start">
+        <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:scale-105 transition">
+          Связаться
+        </a>
+      </div>
+    </div>
+    <div data-aos="fade-left" class="flex justify-center">
+      <img src="IMG_9576.png" alt="Кирилл" class="rounded-2xl shadow-lg w-full max-w-lg md:max-w-xl lg:max-w-2xl hover:scale-105 transition"/>
+    </div>
+  </section>
+
   <!-- Main -->
   <main class="px-6 md:px-12 py-12 grid gap-16 max-w-6xl mx-auto">
-
-    <!-- Hero -->
-    <section id="hero" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
-      <div>
-        <h1 class="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-          Быстро. Надёжно. Всегда на шаг впереди.
-        </h1>
-        <h2 class="text-base sm:text-lg md:text-2xl text-gray-600 mt-6">
-          Ваш бизнес растёт быстрее, когда рутина под контролем
-        </h2>
-        <div class="mt-6 flex gap-4 justify-center md:justify-start">
-          <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:scale-105 transition">
-            Связаться
-          </a>
-        </div>
-      </div>
-      <div data-aos="fade-left" class="flex justify-center">
-        <img src="IMG_9576.png" alt="Кирилл" class="rounded-2xl shadow-lg w-full max-w-lg md:max-w-xl lg:max-w-2xl hover:scale-105 transition"/>
-      </div>
-    </section>
 
     <!-- About -->
     <section id="about" data-aos="fade-up">
       <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">О себе</h3>
       <p class="text-base sm:text-lg md:text-xl">
         Молодой специалист с опытом в бизнес-ассистировании, маркетинге и дизайне. 
-        Помогаю предпринимателям сосредоточиться на стратегии, беря на себя организацию задач, 
-        контроль сроков, визуализацию процессов и автоматизацию рутины. 
+        Помогаю предпринимателям сосредоточиться на стратегии, занимаясь организацией задач, 
+        контролем сроков, визуализацией процессов и автоматизацией рутины. 
         Свободно владею английским (B2), быстро осваиваю новые инструменты.
       </p>
     </section>
@@ -170,10 +190,16 @@
     const menu = document.getElementById("menu");
 
     btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+      if (menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden", "closed");
+        menu.classList.add("open");
+      } else {
+        menu.classList.remove("open");
+        menu.classList.add("closed");
+        setTimeout(() => menu.classList.add("hidden"), 300);
+      }
     });
 
-    // Active эффект
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
